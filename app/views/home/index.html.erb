@@ -1,2 +1,16 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<br>
+<%= form_tag '/create_tweet' do %>
+<%= text_area_tag :content %>
+
+<br>
+<%= submit_tag "Create Tweet" %>
+
+
+<% end %>
+
+<% @tweets.each do |tweet| %>
+
+
+<%= render 'tweet', :tweet => tweet %>
+
+<% end %>
