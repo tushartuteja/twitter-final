@@ -2,4 +2,14 @@
 
 <%= tweet.content %> , <%= tweet.user.email %>, <%= tweet.created_at.to_formatted_s(:short) %>
 
+<br>
+<% if tweet.likes.where(user_id: current_user.id).length > 0 %>
+<%= link_to "UnLike" ,  url_for(controller: :home, action: :like, tweet_id: tweet.id), method: :post %>
+
+<% else %>
+<%= link_to "Like" , url_for(controller: :home, action: :like, tweet_id: tweet.id), method: :post %>
+
+
+<% end %>
+
 </p>

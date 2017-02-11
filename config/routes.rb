@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/logout' => 'authentication_controller#logout'
 
   post '/create_tweet' => 'home#create_tweet'
+  post '/like' => 'home#like'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
