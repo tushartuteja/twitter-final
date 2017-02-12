@@ -1,8 +1,9 @@
 class HomeController < ApplicationController
   before_action :authenticate_user
 
+
   def index
-  	@tweets = Tweet.includes(:user, :likes).all.order(created_at: :desc).limit(50)
+  	@tweets = current_user.feed
   end
 
   def create_tweet
@@ -25,7 +26,30 @@ class HomeController < ApplicationController
 
 
   def follow
+    followee_id = params[:followee_id]
+    follow_mapping = FollowMapping.where(:follower_id => current_user.id, :followee_id => followee_id).first
+    unless follow_mapping
+        follow_mapping = FollowMapping.create(:follower_id => current_user.id, :followee_id => followee_id)
+    else
+        follow_mapping.destroy
+    end
+
+    return redirect_to '/users'
   end
+
+  def users
+    @users = User.where('id != ?', current_user.id)
+  end
+
+  def followers
+    @users = current_user.followers
+  end
+
+  def followees
+    @users = current_user.followees
+  end
+
+
 
   
 end

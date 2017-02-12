@@ -13,6 +13,13 @@ Rails.application.routes.draw do
 
   post '/create_tweet' => 'home#create_tweet'
   post '/like' => 'home#like'
+  post '/follow' => 'home#follow'
+
+
+  get '/users' => 'home#users'
+  get '/followers' => 'home#followers'
+  get '/followees' => 'home#followees'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
