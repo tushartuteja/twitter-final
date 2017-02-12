@@ -6,4 +6,18 @@ class User < ActiveRecord::Base
    has_many :followers, through: :follower_mappings
    has_many :followees, through: :followee_mappings
 
+
+# def followers
+#    	fms = follow_mappings
+#    	followers = []
+#    	follow_mappings.each do |fm|
+#    		followers << fm.follower
+#    	end
+#    	followers
+#    end
+
+
+#    def follower_mappings
+#    	FollowMapping.where(followee_id: self.id)
+#    end
 end
