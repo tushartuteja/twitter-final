@@ -36,3 +36,19 @@ body{
 	display: inline-block;
 
 }
+
+
+.floatingTop{
+	font-size: 48px;
+	position: fixed;
+	right: 18px;
+	bottom: 36px;
+	height: 37px;
+    overflow: hidden;
+}
+
+.floatingTop a {
+	text-decoration: none;
+	background-color: black;
+	color: white;
+}
