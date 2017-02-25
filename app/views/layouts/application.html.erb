@@ -7,14 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
+
+<header>
+
+<div id="userDetails"><% if user_signed_in? %>
 
 <%= link_to 'logout', '/logout' %>
 
 <%= current_user.email %>
 
 <% end %>
-<%= yield %>
+</div>
+</header>
+
+
+<section id="mainSection">
+	<aside id="mainAside"></aside>
+	<main id="mainMain"><%= yield %></main>
+</section>
+
+
+
+<footer></footer>
 
 </body>
 </html>

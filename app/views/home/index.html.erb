@@ -16,10 +16,11 @@
 <%= submit_tag 'search' %>
  <% end %>
 
-
+<div class="tweets">
 <% @tweets.each do |tweet| %>
 
 
 <%= render 'tweet', :tweet => tweet %>
 
 <% end %>
+</div>

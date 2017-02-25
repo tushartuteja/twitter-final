@@ -1,3 +1,57 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+header{
+	background-color: white;
+	padding: 8px;
+	border-bottom: 1px solid grey;
+}
+
+.tweet{
+	background-color:white;
+	border: 1px solid lightgrey;
+	border-top:none;
+	padding: 8px;
+}
+
+.tweets{
+	border-top: 1px solid lightgrey;
+}
+
+.inline{
+	display: inline-block;
+}
+
+
+.username{
+	font-weight: bold;
+}
+
+.time{
+	color: darkgrey;
+}
+
+
+.tweetImage{
+	width: 40px;
+}
+
+
+.userImage{
+	width: 8%;
+}
+
+.content{
+	padding-left: 8px;
+	width: 90%;
+}
+
+
+.tweetContent{
+	margin: 8px 0px;
+}
+
+
+
