@@ -7,14 +7,27 @@ header{
 	background-color: white;
 	padding: 8px;
 	border-bottom: 1px solid grey;
+	position:fixed;
+	width: 100%;
+	top: 0;
 }
-
+footer{
+	background-color: white;
+	padding: 8px;
+	border-top: 1px solid grey;
+	position:fixed;
+	width: 100%;
+	bottom: 0;
+	height: 18px;
+}
 .tweet{
 	background-color:white;
 	border: 1px solid lightgrey;
 	border-top:none;
 	padding: 8px;
 }
+
+
 
 .tweets{
 	border-top: 1px solid lightgrey;
