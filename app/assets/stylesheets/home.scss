@@ -2,79 +2,73 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-header{
-	background-color: white;
-	padding: 8px;
-	border-bottom: 1px solid grey;
-	position:fixed;
-	width: 100%;
-	top: 0;
-	display:flex;
-	justify-content:space-between;
-	padding-right: 12px;
-	padding-left: 12px;
-	box-sizing: border-box;
+header {
+  background-color: white;
+  padding: 8px;
+  border-bottom: 1px solid grey;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 12px;
+  padding-left: 12px;
+  box-sizing: border-box;
 }
-footer{
-	background-color: white;
-	padding: 8px;
-	border-top: 1px solid grey;
-	position:fixed;
-	width: 100%;
-	bottom: 0;
-	height: 18px;
+
+footer {
+  background-color: white;
+  padding: 8px;
+  border-top: 1px solid grey;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 18px;
 }
 
 .logo > i {
 
-
-	color:skyblue;
-}
-.tweet{
-	background-color:white;
-	border: 1px solid lightgrey;
-	border-top:none;
-	padding: 8px;
+  color: skyblue;
 }
 
-
-
-.tweets{
-	border-top: 1px solid lightgrey;
+.tweet {
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-top: none;
+  padding: 8px;
 }
 
-.inline{
-	display: inline-block;
+.tweets {
+  border-top: 1px solid lightgrey;
 }
 
-
-.username{
-	font-weight: bold;
+.inline {
+  display: inline-block;
 }
 
-.time{
-	color: darkgrey;
+.username {
+  font-weight: bold;
 }
 
-
-.tweetImage{
-	width: 40px;
+.time {
+  color: darkgrey;
 }
 
-
-.userImage{
-	width: 8%;
+.tweetImage {
+  width: 40px;
 }
 
-.content{
-	padding-left: 8px;
-	width: 90%;
+.userImage {
+  width: 8%;
 }
 
+.content {
+  padding-left: 8px;
+  width: 90%;
+}
 
-.tweetContent{
-	margin: 8px 0px;
+.tweetContent {
+  margin: 8px 0px;
 }
 
 

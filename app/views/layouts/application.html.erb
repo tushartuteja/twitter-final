@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>TwitterProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
@@ -14,52 +14,37 @@
 <body>
 
 <header>
-<div class="actions">
+  <div class="actions">
 
-<%= link_to raw('<i class="fa fa-home" aria-hidden="true"></i>'), '/' %>
-</div>
+    <%= link_to raw('<i class="fa fa-home" aria-hidden="true"></i>'), '/' %>
+  </div>
 
-<div class="logo">
-<i class="fa fa-twitter" aria-hidden="true"></i>
+  <div class="logo">
+    <i class="fa fa-twitter" aria-hidden="true"></i>
 
-</div>
-<div id="userDetails"><% if user_signed_in? %>
+  </div>
+  <div id="userDetails">
+    <% if user_signed_in? %>
 
-<%= link_to 'logout', '/logout' %>
+        <%= link_to 'logout', '/logout' %>
 
-<%= current_user.email %>
+        <%= current_user.email %>
 
-<% end %>
-</div>
+    <% end %>
+  </div>
 </header>
 
 
 <section id="mainSection" id="top">
-	<aside id="mainAside"></aside>
-	<main id="mainMain"><%= yield %></main>
+  <aside id="mainAside"></aside>
+  <main id="mainMain"><%= yield %></main>
 </section>
-
 
 
 <footer></footer>
 
 
-<div class="floatingTop"> <a href="#top">^ </a></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="floatingTop"><a href="#top">^ </a></div>
 
 
 </body>

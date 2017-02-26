@@ -15,7 +15,7 @@ class AuthenticationControllerController < ApplicationController
         session[:user_id] = user.id
         return redirect_to '/'
       else
-      return redirect_to '/signin'
+        return redirect_to '/signin'
       end
 
     else
@@ -31,7 +31,7 @@ class AuthenticationControllerController < ApplicationController
     unless user
       user = User.create(email: email, password: password)
       session[:user_id] = user.id
-      return redirect_to '/'    
+      return redirect_to '/'
     else
       return redirect_to '/signup'
     end

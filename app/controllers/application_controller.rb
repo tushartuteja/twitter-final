@@ -5,20 +5,20 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :user_signed_in?
 
   def user_signed_in?
-  	!session[:user_id].nil?
+    !session[:user_id].nil?
   end
 
 
   def current_user
-  	if user_signed_in? 
-  		User.find(session[:user_id])
-  	end
+    if user_signed_in?
+      User.find(session[:user_id])
+    end
   end
 
 
   def authenticate_user
-  	unless user_signed_in?
-  		return redirect_to '/signin'
-  	end
+    unless user_signed_in?
+      return redirect_to '/signin'
+    end
   end
 end
