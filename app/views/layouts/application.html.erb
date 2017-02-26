@@ -5,11 +5,25 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 </head>
 <body>
 
 <header>
+<div class="actions">
+<a href="/"><i class="fa fa-home" aria-hidden="true"></i>
 
+</a>
+</div>
+
+<div class="logo">
+<i class="fa fa-twitter" aria-hidden="true"></i>
+
+</div>
 <div id="userDetails"><% if user_signed_in? %>
 
 <%= link_to 'logout', '/logout' %>

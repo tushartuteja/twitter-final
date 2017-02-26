@@ -10,6 +10,11 @@ header{
 	position:fixed;
 	width: 100%;
 	top: 0;
+	display:flex;
+	justify-content:space-between;
+	padding-right: 12px;
+	padding-left: 12px;
+	box-sizing: border-box;
 }
 footer{
 	background-color: white;
@@ -19,6 +24,10 @@ footer{
 	width: 100%;
 	bottom: 0;
 	height: 18px;
+}
+
+.logo > i {
+	color:skyblue;
 }
 .tweet{
 	background-color:white;
