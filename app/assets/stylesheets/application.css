@@ -24,7 +24,7 @@ body{
 	background-color: #f5f8fa;
 	padding-top: 34px;
 	padding-bottom: 34px;
-	
+
 }
 
 #mainAside{
@@ -52,4 +52,13 @@ body{
 	text-decoration: none;
 	background-color: black;
 	color: white;
+}
+
+a{
+	color:hsla(6, 89%, 59%,1);
+}
+
+a:hover{
+		color:hsla(6, 89%, 30%,1);
+
 }
