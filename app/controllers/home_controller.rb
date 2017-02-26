@@ -20,14 +20,26 @@ class HomeController < ApplicationController
 
   def like
     tweet_id = params[:tweet_id]
-    like = current_user.likes.where(tweet_id: tweet_id).first
-    if like
-      like.destroy
+    @changed = ""
+    @like = current_user.likes.where(tweet_id: tweet_id).first
+    if @like
+      @like.destroy
+      @changed = "like"
     else
       current_user.likes.create(tweet_id: tweet_id)
+      @like = current_user.likes.where(tweet_id: tweet_id).first
+      @changed = "unlike"
     end
 
-    redirect_to '/'
+    respond_to do |format|
+      format.js{
+
+      }
+      format.html{
+        redirect_to '/'
+      }
+    end
+
   end
 
 

@@ -14,10 +14,10 @@
     <div class="reactions">
 
       <% if tweet.likes.where(user_id: current_user.id).length > 0 %>
-          <%= link_to "UnLike", url_for(controller: :home, action: :like, tweet_id: tweet.id), method: :post %>
+          <%= link_to "UnLike", url_for(controller: :home, action: :like, tweet_id: tweet.id), method: :post, remote: :true, id: "tweet#{tweet.id}" %>
 
       <% else %>
-          <%= link_to "Like", url_for(controller: :home, action: :like, tweet_id: tweet.id), method: :post %>
+          <%= link_to "Like", url_for(controller: :home, action: :like, tweet_id: tweet.id), method: :post, remote: :true, id: "tweet#{tweet.id}" %>
 
 
       <% end %>
