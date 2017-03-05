@@ -60,3 +60,15 @@ a:hover {
     color: hsla(6, 89%, 30%, 1);
 
 }
+
+@media (max-width: 720px){
+    #mainAside{
+        display: none;
+    }
+
+    #mainMain{
+        width: 100%;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+}
