@@ -73,6 +73,13 @@ function onBodyLoad() {
         	random: 12345,
         }
 
+        if (!content.value || (content.value && content.value.length < 1)){
+
+        	noty({text: "Cannot Create Empty Tweet", theme: "relax", type: 'error', layout: 'topRight'});
+
+        	return;
+        }
+
 
         $.ajax({
             url: url,
