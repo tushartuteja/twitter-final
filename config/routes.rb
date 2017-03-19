@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post '/create_tweet_json' => 'home#create_tweet_json'
 
   post '/like' => 'home#like'
+  post '/like_tweet_json' => 'home#like_tweet_json'
+
   post '/follow' => 'home#follow'
 
 

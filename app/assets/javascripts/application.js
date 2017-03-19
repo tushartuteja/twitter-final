@@ -95,6 +95,43 @@ function onBodyLoad() {
 
     });
 
+
+    var like_links = document.querySelectorAll('div.tweet a.tweet_like_link');
+
+    for(var i=0; i<like_links.length;i++){
+    	var link = like_links[i];
+    	var click_function = function(event){
+    		event.preventDefault();
+    		event.stopPropagation();
+    		var tweet_id = this.id.slice(6);
+    		$.ajax({
+            url: '/like_tweet_json',
+            method: "POST",
+            data: {tweet_id: tweet_id},
+            success: function(data) {
+            	console.log("tweet_" + data.tweet_id);
+            	var element = document.getElementById("tweet_" + data.like.tweet_id);
+            	console.log(element);
+
+            	if(data.like_state){
+            		element.innerHTML = "Unlike";
+            	}else{
+            		element.innerHTML = "Like";
+            	}
+            	               
+            },
+            error: function(error){
+            	
+            	noty({text: "Error", theme: "relax", type: 'error', layout: 'topRight'});
+
+            }
+        });
+    		
+    	};
+
+    	link.addEventListener('click', click_function.bind(link));
+    }
+
 }
 
 window.addEventListener("load", function(event) {

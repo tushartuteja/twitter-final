@@ -35,6 +35,25 @@ class HomeController < ApplicationController
     redirect_to '/'
   end
 
+  def like_tweet_json
+    tweet_id = params[:tweet_id]
+    like = current_user.likes.where(tweet_id: tweet_id).first
+    if like
+      like.destroy
+      like_state = false
+    else
+      like = current_user.likes.create(tweet_id: tweet_id)
+      like_state = true
+    end
+
+
+    data = Hash.new
+    data["tweet_id"] = tweet_id
+    data["like"] = like
+    data["like_state"] = like_state
+
+    render json: data
+  end
 
   def follow
     followee_id = params[:followee_id]
