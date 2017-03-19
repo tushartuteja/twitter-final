@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.noty.packaged.min
 //= require turbolinks
 //= require_tree .
 
@@ -68,7 +69,8 @@ function onBodyLoad() {
         var url = "/create_tweet_json";
         var content = document.getElementById("content");
         data = {
-        	content: content.value
+        	content: content.value,
+        	random: 12345,
         }
 
 
@@ -86,6 +88,8 @@ function onBodyLoad() {
             },
             error: function(error){
             	console.log(error);
+            	noty({text: "Error", theme: "relax", type: 'error', layout: 'topRight'});
+
             }
         });
 
