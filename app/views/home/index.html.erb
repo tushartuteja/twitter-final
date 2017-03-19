@@ -1,5 +1,5 @@
 <br>
-<%= form_tag '/create_tweet' do %>
+<%= form_tag '/create_tweet_json', id: "create_tweet" do %>
     <%= text_area_tag :content %>
 
     <br>
@@ -16,7 +16,7 @@
     <%= submit_tag 'search' %>
 <% end %>
 
-<div class="tweets">
+<div class="tweets" id="tweets">
   <% @tweets.each do |tweet| %>
 
 

@@ -17,6 +17,11 @@ class HomeController < ApplicationController
     return redirect_to '/'
   end
 
+  def create_tweet_json
+    tweet = current_user.tweets.create(content: params[:content])
+    render json: tweet
+  end
+
 
   def like
     tweet_id = params[:tweet_id]

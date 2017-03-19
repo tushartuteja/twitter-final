@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
    def feed
    	users = followees.pluck(:id) + [self.id]
    	feed_tweets = Tweet.includes(:user, :likes).where("user_id in (?)",users)
-  	feed_tweets
+  	feed_tweets.order(created_at: :desc)
    end
 
 

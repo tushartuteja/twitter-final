@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   get '/' => 'home#index'
   post '/create_tweet' => 'home#create_tweet'
+  post '/create_tweet_json' => 'home#create_tweet_json'
+
   post '/like' => 'home#like'
   post '/follow' => 'home#follow'
 
