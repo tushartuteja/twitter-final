@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   post '/follow' => 'home#follow'
 
+get '/index_api' => 'home#index_api'
 
   get '/users' => 'home#users'
   get '/followers' => 'home#followers'

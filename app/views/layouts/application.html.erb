@@ -28,10 +28,12 @@
   <div id="userDetails">
     <% if user_signed_in? %>
 
-        <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+        <%= link_to 'logout', destroy_user_session_path, method: :delete , data: {confirm: 'Are you Sure?'}%>
 
         <%= current_user.email %>
 
+<% else %>
+<%= link_to 'Sign In', new_user_session_path %>
     <% end %>
   </div>
 </header>

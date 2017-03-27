@@ -12,6 +12,11 @@ class HomeController < ApplicationController
 
   end
 
+  def index_api
+    render json: current_user.feed
+  end
+
+
   def create_tweet
     current_user.tweets.create(content: params[:content])
     return redirect_to '/'
