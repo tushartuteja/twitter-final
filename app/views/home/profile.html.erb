@@ -1,0 +1,21 @@
+<div class="profilePage">
+<%= form_tag url_for(controller: 'home', action: 'update_profile'), :multipart => true do %>
+
+
+    <%= text_field_tag :name, current_user.name %>
+    <br>
+
+      <img src="/uploads/<%= current_user.profile_picture %>" >
+      <br>
+    <%= file_field_tag :profile_picture %>
+
+
+    <br>
+
+
+    <%= submit_tag "Update" %>
+
+
+<% end %>
+
+</div>

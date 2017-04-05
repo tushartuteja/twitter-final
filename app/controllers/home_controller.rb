@@ -84,5 +84,24 @@ class HomeController < ApplicationController
     @users = current_user.followees
   end
 
+  def profile
+
+  end
+
+
+  def update_profile
+    name = params["name"]
+    current_user.name = name
+    p = params["profile_picture"]
+    new_filename = SecureRandom.hex + "." + p.original_filename.split(".")[1]
+
+    File.open(Rails.root.join('public', 'uploads', new_filename), 'wb') do |file|
+      file.write(p.read)
+    end
+
+    current_user.profile_picture = new_filename
+    current_user.save
+    redirect_to :profile
+  end
 
 end

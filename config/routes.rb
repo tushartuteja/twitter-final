@@ -10,13 +10,14 @@ Rails.application.routes.draw do
 
   post '/follow' => 'home#follow'
 
-get '/index_api' => 'home#index_api'
+  get '/index_api' => 'home#index_api'
 
   get '/users' => 'home#users'
   get '/followers' => 'home#followers'
   get '/followees' => 'home#followees'
 
-
+  get '/profile' => 'home#profile'
+  post '/update_profile' => 'home#update_profile'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
