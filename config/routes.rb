@@ -26,6 +26,9 @@ Rails.application.routes.draw do
       post '/generate_otp' => 'users_api#generate_otp'
       post '/verify_otp' => 'users_api#verify_otp'
       get '/feed' => 'users_logged_in#feed'
+      get '/followers' => 'users_logged_in#followers'
+      get '/followees' => 'users_logged_in#followees'
+
     end
   end
 
