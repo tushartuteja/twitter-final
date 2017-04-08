@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408113210) do
+ActiveRecord::Schema.define(version: 20170408121329) do
 
   create_table "follow_mappings", force: :cascade do |t|
     t.integer  "follower_id"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20170408113210) do
     t.string   "name"
     t.string   "profile_picture"
     t.string   "access_token"
+    t.integer  "otp"
+    t.datetime "otp_expiry"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -19,6 +19,22 @@ class User < ActiveRecord::Base
     feed_tweets.order(created_at: :desc)
   end
 
+  def generate_otp
+    self.otp = rand(9000) + 1000
+    self.otp_expiry = Time.now
+    #Send Otp
+    save!
+  end
+
+  def verify_otp otp
+    if Time.now - self.otp_expiry  < 5.minutes
+      return otp == self.otp
+    else
+      generate_otp
+      return false
+    end
+  end
+
   def generate_access_token
     generated = SecureRandom.hex
     until User.where(access_token: generated).first.nil?

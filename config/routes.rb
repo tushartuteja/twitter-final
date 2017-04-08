@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post '/sign_in' => 'users_api#sign_in'
+      post '/generate_otp' => 'users_api#generate_otp'
+      post '/verify_otp' => 'users_api#verify_otp'
+
     end
   end
 
