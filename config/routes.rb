@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   get '/profile' => 'home#profile'
   post '/update_profile' => 'home#update_profile'
 
+
+  namespace :api do
+    namespace :v1 do
+      post '/sign_in' => 'users_api#sign_in'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
