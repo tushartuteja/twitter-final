@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       post '/sign_in' => 'users_api#sign_in'
       post '/generate_otp' => 'users_api#generate_otp'
       post '/verify_otp' => 'users_api#verify_otp'
-
+      get '/feed' => 'users_logged_in#feed'
     end
   end
 
