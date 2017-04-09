@@ -90,3 +90,16 @@ footer {
 div.profilePage{
   margin-top: 24px;
 }
+
+ul#ui-id-1{
+  background-color: white;
+  list-style: none;
+  li {
+    border: 1px solid black;
+    max-width: 300px;
+  }
+
+  li:hover{
+    background-color: lightgoldenrodyellow;
+  }
+}

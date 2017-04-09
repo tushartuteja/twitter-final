@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require autocomplete-rails
 //= require bootstrap
 //= require jquery.noty.packaged.min
 //= require turbolinks

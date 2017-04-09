@@ -37,6 +37,7 @@ gem 'data-confirm-modal'
 gem 'rails-api'
 gem 'activeadmin', github: 'activeadmin'
 gem 'omniauth-facebook'
+gem 'rails4-autocomplete'
 
 
 group :development, :test do

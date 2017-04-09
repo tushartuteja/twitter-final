@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get '/profile' => 'home#profile'
   post '/update_profile' => 'home#update_profile'
+  get '/autocomplete_user_email' => 'home#autocomplete_user_email'
 
 
   namespace :api do
