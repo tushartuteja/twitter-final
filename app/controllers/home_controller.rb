@@ -28,7 +28,12 @@ class HomeController < ApplicationController
   end
 
   def create_tweet_remote
+    @tweet = current_user.tweets.create(content: params[:content])
+    respond_to do |format|
+      format.js{
 
+      }
+    end
   end
 
 

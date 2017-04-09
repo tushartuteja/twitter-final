@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   post '/like' => 'home#like'
   post '/like_tweet_json' => 'home#like_tweet_json'
+  post '/create_tweet_remote' => 'home#create_tweet_remote'
 
   post '/follow' => 'home#follow'
 

@@ -1,5 +1,5 @@
 <br>
-<%= form_tag '/create_tweet_json', id: "create_tweet" do %>
+<%= form_tag '/create_tweet_remote', id: "create_tweet", remote: true do %>
     <%= text_area_tag :content %>
 
     <br>

@@ -68,48 +68,48 @@ function onBodyLoad() {
     }
 
 
-    var createTweet = document.getElementById("create_tweet");
-    if (createTweet) {
-        createTweet
-        .addEventListener('submit', function(event) {
-            event.preventDefault();
-            console.log("tried submitting");
-            var url = "/create_tweet_json";
-            var content = document.getElementById("content");
-            data = {
-                content: content.value,
-                random: 12345,
-            }
-
-            if (!content.value || (content.value && content.value.length < 1)) {
-
-                noty({ text: "Cannot Create Empty Tweet", theme: "relax", type: 'error', layout: 'topRight' });
-
-                return;
-            }
-
-
-            $.ajax({
-                url: url,
-                method: "POST",
-                data: data,
-                success: function(result) {
-                    console.log(result);
-                    var list = document.getElementById("tweets");
-                    next_elem = list.firstElementChild;
-                    var new_elem = document.createElement('div');
-                    new_elem.innerHTML = result.content;
-                    list.insertBefore(new_elem, next_elem);
-                },
-                error: function(error) {
-                    console.log(error);
-                    noty({ text: "Error", theme: "relax", type: 'error', layout: 'topRight' });
-
-                }
-            });
-
-        });
-    }
+    // var createTweet = document.getElementById("create_tweet");
+    // if (createTweet) {
+    //     createTweet
+    //     .addEventListener('submit', function(event) {
+    //         event.preventDefault();
+    //         console.log("tried submitting");
+    //         var url = "/create_tweet_json";
+    //         var content = document.getElementById("content");
+    //         data = {
+    //             content: content.value,
+    //             random: 12345,
+    //         }
+    //
+    //         if (!content.value || (content.value && content.value.length < 1)) {
+    //
+    //             noty({ text: "Cannot Create Empty Tweet", theme: "relax", type: 'error', layout: 'topRight' });
+    //
+    //             return;
+    //         }
+    //
+    //
+    //         $.ajax({
+    //             url: url,
+    //             method: "POST",
+    //             data: data,
+    //             success: function(result) {
+    //                 console.log(result);
+    //                 var list = document.getElementById("tweets");
+    //                 next_elem = list.firstElementChild;
+    //                 var new_elem = document.createElement('div');
+    //                 new_elem.innerHTML = result.content;
+    //                 list.insertBefore(new_elem, next_elem);
+    //             },
+    //             error: function(error) {
+    //                 console.log(error);
+    //                 noty({ text: "Error", theme: "relax", type: 'error', layout: 'topRight' });
+    //
+    //             }
+    //         });
+    //
+    //     });
+    // }
 
 
     var like_links = document.querySelectorAll('div.tweet a.tweet_like_link');
