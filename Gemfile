@@ -38,6 +38,7 @@ gem 'rails-api'
 gem 'activeadmin', github: 'activeadmin'
 gem 'omniauth-facebook'
 gem 'rails4-autocomplete'
+gem 'acts-as-taggable-on', '~> 4.0'
 
 
 group :development, :test do

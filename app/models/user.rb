@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :followee_mappings, class_name: 'FollowMapping', foreign_key: 'follower_id'
   has_many :followers, through: :follower_mappings
   has_many :followees, through: :followee_mappings
+  acts_as_taggable_on :skills
   #has_many :feed
 
   after_create :generate_access_token
