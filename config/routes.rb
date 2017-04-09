@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#index'
-  devise_for :users
   get '/' => 'home#index'
   post '/create_tweet' => 'home#create_tweet'
   post '/create_tweet_json' => 'home#create_tweet_json'
@@ -33,6 +32,9 @@ Rails.application.routes.draw do
 
     end
   end
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -27,6 +27,10 @@ class HomeController < ApplicationController
     render json: tweet
   end
 
+  def create_tweet_remote
+
+  end
+
 
   def like
     tweet_id = params[:tweet_id]

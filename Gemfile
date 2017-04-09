@@ -36,6 +36,7 @@ gem 'devise'
 gem 'data-confirm-modal'
 gem 'rails-api'
 gem 'activeadmin', github: 'activeadmin'
+gem 'omniauth-facebook'
 
 
 group :development, :test do
