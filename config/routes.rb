@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   post '/update_profile' => 'home#update_profile'
   get '/autocomplete_user_email' => 'home#autocomplete_user_email'
 
+  mount Resque::Server, :at => "/resque"
+
 
   namespace :api do
     namespace :v1 do

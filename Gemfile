@@ -39,6 +39,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'omniauth-facebook'
 gem 'rails4-autocomplete'
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'resque', :require => "resque/server"
 
 
 group :development, :test do
