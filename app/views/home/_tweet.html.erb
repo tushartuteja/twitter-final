@@ -21,6 +21,12 @@
 
 
       <% end %>
+
+<% if current_user.admin? || (current_user.id == tweet.user_id) %>
+      <%= link_to 'delete', url_for(controller: :home, action: :delete_tweet, tweet_id: tweet.id), method: :delete %>
+
+
+      <% end %>
     </div>
 
 

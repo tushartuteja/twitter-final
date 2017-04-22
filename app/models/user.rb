@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   acts_as_taggable_on :skills
   #has_many :feed
 
+  enum role: [:user, :admin, :moderator]
+
   after_create :generate_access_token
 
   def feed page_number: 0

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'admin/users'
+
+  get 'admin/revoke_admin'
+
+  get 'admin/grant_admin'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#index'
@@ -24,7 +30,7 @@ Rails.application.routes.draw do
 
   post '/index_tweets' => 'home#index_tweets'
   mount Resque::Server, :at => "/resque"
-
+  delete '/delete_tweet' => 'home#delete_tweet'
 
   namespace :api do
     namespace :v1 do

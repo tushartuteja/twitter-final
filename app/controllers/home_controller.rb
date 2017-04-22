@@ -29,7 +29,7 @@ class HomeController < ApplicationController
 
       }
     end
-    
+
   end
 
 
@@ -132,6 +132,14 @@ class HomeController < ApplicationController
     current_user.profile_picture = new_filename
     current_user.save
     redirect_to :profile
+  end
+
+  def delete_tweet
+    tweet = Tweet.find(params[:tweet_id])
+    if current_user.admin? || (tweet.user_id == current_user.id) 
+      tweet.destroy
+    end
+    redirect_to '/'
   end
 
 end
