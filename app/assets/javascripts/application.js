@@ -167,7 +167,7 @@ function onBodyLoad() {
             content_loaded = true;
             
 
-            url = "/index_tweets.js";
+            url = "/index_tweets";
             page = page + 1  ;
             data = {
                 page: page
