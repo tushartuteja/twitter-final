@@ -52,3 +52,28 @@
 
   <% end %>
 </div>
+
+
+
+<div class="pageNav">
+<ul>
+<% for page_number in 0..@page_count do %>
+
+<li>
+
+<% if page_number == @page_number %>
+<%= page_number %>
+
+<% else %>
+<%= link_to page_number.to_s,  url_for(controller: :home, action: :index, page_number: page_number) %> 
+
+<% end %>
+
+</li>
+
+<% end %>
+</ul>
+</div>
+
+
+

@@ -15,11 +15,20 @@ class User < ActiveRecord::Base
 
   after_create :generate_access_token
 
-  def feed
+  def feed page_number: 0
+    feed_total.limit(Constants::TWEET_PAGE_COUNT).offset(Constants::TWEET_PAGE_COUNT * page_number)
+  end
+
+  def feed_total
     users = followees.pluck(:id) + [self.id]
     feed_tweets = Tweet.includes(:user, :likes).where("user_id in (?)", users)
     feed_tweets.order(created_at: :desc)
   end
+
+  def page_count
+    feed_total.count / Constants::TWEET_PAGE_COUNT
+  end
+
 
   def generate_otp
     self.otp = rand(9000) + 1000

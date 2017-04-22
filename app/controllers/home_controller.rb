@@ -4,8 +4,16 @@ class HomeController < ApplicationController
 
 
   def index
-    @tweets = current_user.feed
+    @page_number = 0
+    if params[:page]
+        @page_number = params[:page].to_i
+    end
+
+    @tweets = current_user.feed page_number: @page_number
     search = params[:search]
+
+    @page_count = current_user.page_count
+
     if search
       query = "content like '%#{search}%' "
       @tweets = @tweets.where(query)
