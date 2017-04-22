@@ -1,0 +1,3 @@
+<% @tweets.each do |tweet| %>
+$("#tweets").append("<%= escape_javascript(render 'tweet', :tweet => tweet) %>");
+<% end %>

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   post '/update_profile' => 'home#update_profile'
   get '/autocomplete_user_email' => 'home#autocomplete_user_email'
 
+  post '/index_tweets' => 'home#index_tweets'
   mount Resque::Server, :at => "/resque"
 
 

@@ -21,6 +21,18 @@ class HomeController < ApplicationController
 
   end
 
+  def index_tweets
+    @page_number = params[:page].to_i
+    @tweets = current_user.feed page_number: @page_number
+    respond_to do |format|
+      format.js{
+
+      }
+    end
+    
+  end
+
+
   def index_api
     render json: current_user.feed
   end

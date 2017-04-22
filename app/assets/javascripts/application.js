@@ -149,7 +149,53 @@ function onBodyLoad() {
 
             link.addEventListener('click', click_function.bind(link));
         }
-    }
+    };
+
+
+
+    var content_loaded = false;
+    page = 0;
+    $(document).on('scroll', function(event) {
+
+        bh = document.body.offsetHeight;
+        wh = $(window).height();
+        scrollY = window.pageYOffset;
+
+
+        if (bh - wh - 20 < scrollY && !content_loaded) {
+            console.log("load content");
+            content_loaded = true;
+            
+
+            url = "/index_tweets.js";
+            page = page + 1  ;
+            data = {
+                page: page
+            };
+
+            $.ajax({
+                url: url,
+                method: "POST",
+                data: data,
+                success: function(result) {
+                    content_loaded = false;
+                },
+                error: function(error) {
+                    content_loaded = false;
+                    page = page - 1;
+                   
+                }
+            });
+
+
+
+
+        }
+
+    });
+
+
+
 
 }
 
