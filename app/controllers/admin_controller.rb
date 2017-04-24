@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   before_action :authenticate_user!
   before_action :check_admin_or_moderator!
-  before_action :check_admin! only: [:revoke_admin, :grant_admin]
+  before_action :check_admin!, only: [:revoke_admin, :grant_admin]
 
   def users
   end
