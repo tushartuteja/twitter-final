@@ -1,6 +1,6 @@
 class Tweet < ActiveRecord::Base
-  belongs_to :user, dependent: :destroy
-  has_many :likes
+  belongs_to :user
+  has_many :likes, dependent: :destroy
 
   acts_as_taggable_on :mood
 
