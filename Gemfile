@@ -41,7 +41,7 @@ gem 'rails4-autocomplete'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'resque', :require => "resque/server"
 
-
+gem 'unicorn'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
